@@ -37,6 +37,7 @@ public class User extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(User.this, usersignup.class);
+
                 startActivity(i);
 
             }
@@ -76,7 +77,8 @@ public class User extends AppCompatActivity {
                     }
                     else{
                         Intent i=new Intent(getApplicationContext(), USERPROFILE.class);
-
+                          i.putExtra("email",uslogin_email);
+                        i.putExtra("pass",uslogin_password);
                         startActivity(i);
                         Toast.makeText(User.this, response, Toast.LENGTH_SHORT).show();
                     }
