@@ -19,5 +19,6 @@ int position;
         position=intent.getExtras().getInt("position");
         tvname.setText("NAME: "+userdonate.userdonateNgodata.get(position).getName());
         tvemail.setText("EMAIL: "+userdonate.userdonateNgodata.get(position).getEmail());
+
     }
 }

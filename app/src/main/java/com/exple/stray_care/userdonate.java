@@ -45,7 +45,7 @@ public class userdonate extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
-                CharSequence[] dialogItem = {"DONATE"};
+                CharSequence[] dialogItem = {"DONATE","SEND ANANDOMED"};
                 builder.setTitle("DONATION");
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
@@ -59,7 +59,12 @@ public class userdonate extends AppCompatActivity {
                                         .putExtra("position",position));
 
                                 break;
+                            case 1:
 
+                                startActivity(new Intent(getApplicationContext(), usersendabandomedngo.class)
+                                        .putExtra("position", position));
+
+                                break;
 
 
 
