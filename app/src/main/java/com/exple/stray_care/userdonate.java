@@ -104,12 +104,13 @@ public class userdonate extends AppCompatActivity {
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 
-
+                                    String id = object.getString("ngo_id");
                                     String name = object.getString("name");
                                     String email = object.getString("email");
+                                    String mobile= object.getString("mobile");
+                                    String address = object.getString("address");
 
-
-                                    userdonateNgodatadonate e = new userdonateNgodatadonate(name,email);
+                                    userdonateNgodatadonate e = new userdonateNgodatadonate(id,name,email,mobile,address);
                                     userdonateNgodata.add(e);
                                     adapter.notifyDataSetChanged();
 

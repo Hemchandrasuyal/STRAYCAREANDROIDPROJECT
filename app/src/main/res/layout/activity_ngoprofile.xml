@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".ngoprofile">
 
+    <Button
+        android:id="@+id/BUTTONNGOPROLISTABANDONED"
+        android:layout_width="272dp"
+        android:layout_height="80dp"
+        android:text="LIST OF ABANDONED ANIMALS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205" />
+
+    <Button
+        android:id="@+id/buttonNGOPRODONATION"
+        android:layout_width="164dp"
+        android:layout_height="76dp"
+        android:text="DONATIONS "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.403" />
 </androidx.constraintlayout.widget.ConstraintLayout>

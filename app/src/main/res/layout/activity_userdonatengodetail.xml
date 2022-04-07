@@ -7,7 +7,14 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".USERDONATENGODetail">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NGO ID:"
+        android:textSize="20sp"
+        android:id="@+id/txtid"
+        android:layout_marginBottom="10dp"
+        />
 
     <TextView
         android:layout_width="match_parent"
@@ -43,15 +50,21 @@
         />
 
     <EditText
-        android:id="@+id/textViewAMOUNT"
+        android:id="@+id/txtamount"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:text="AMOUNT" />
+    <EditText
+        android:id="@+id/txtpickuploc"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="PICKUP LOCATION" />
 
     <Button
         android:id="@+id/button3DONATE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="inseruserdonate"
         android:text="Button" />
 
 </LinearLayout>

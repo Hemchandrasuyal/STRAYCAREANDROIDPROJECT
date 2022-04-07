@@ -9,16 +9,17 @@
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_main2.xml" value="0.2" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_ngo.xml" value="0.1" />
-        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_ngoprofile.xml" value="0.11927083333333334" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_ngoprofile.xml" value="0.25" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_user.xml" value="0.1859375" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_userdonate.xml" value="0.2" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_userdonatengodetail.xml" value="0.22" />
-        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_userprofile.xml" value="0.1859375" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_userprofile.xml" value="0.16" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersendabandomedngo.xml" value="0.25" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersendinjuredpetdoc.xml" value="0.1" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersignup.xml" value="0.2" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemngodatadonate.xml" value="0.2" />
-        <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemsendinjuredpet.xml" value="0.11927083333333334" />
-        <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemusershowprofile.xml" value="0.1" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemsendinjuredpet.xml" value="0.18" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemusershowprofile.xml" value="0.18" />
       </map>
     </option>
   </component>

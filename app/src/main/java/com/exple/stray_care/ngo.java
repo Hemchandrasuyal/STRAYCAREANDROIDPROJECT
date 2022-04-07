@@ -81,7 +81,8 @@ public class ngo extends AppCompatActivity {
                     }
                     else{
                         Intent i=new Intent(getApplicationContext(), ngoprofile.class);
-
+                        i.putExtra("ngoemail",ngologin_email);
+                        i.putExtra("ngopass",ngologin_pass);
                         startActivity(i);
                         Toast.makeText(ngo.this, response, Toast.LENGTH_SHORT).show();
                     }

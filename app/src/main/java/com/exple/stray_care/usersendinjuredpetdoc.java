@@ -148,14 +148,17 @@ public class usersendinjuredpetdoc extends AppCompatActivity {
 
 }
 class usersendinjuredpetdata {
-    private String name,email,mobile;
+
+    private String name, email;
 
     public usersendinjuredpetdata() {
     }
 
     public usersendinjuredpetdata(String name, String email) {
+
         this.name = name;
         this.email = email;
+
 
     }
 
@@ -175,7 +178,9 @@ class usersendinjuredpetdata {
         this.email = email;
     }
 
+
 }
+
 class Adaptertusersendinjured extends ArrayAdapter<usersendinjuredpetdata> {
     Context context;
     List<usersendinjuredpetdata> arrayListusersendinjureddata;
@@ -189,10 +194,10 @@ class Adaptertusersendinjured extends ArrayAdapter<usersendinjuredpetdata> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_itemsendinjuredpet,null,true);
-        TextView tvId=view.findViewById(R.id.txt_id);
-        TextView tvname=view.findViewById(R.id.txt_name);
-        tvId.setText(arrayListusersendinjureddata.get(position).getEmail());
-        tvname.setText(arrayListusersendinjureddata.get(position).getName());
+        TextView tvId=view.findViewById(R.id.txt_name);
+        TextView tvname=view.findViewById(R.id.txt_mobile);
+        tvId.setText(arrayListusersendinjureddata.get(position).getName());
+        tvname.setText(arrayListusersendinjureddata.get(position).getEmail());
         return view;
     }
 }

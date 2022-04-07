@@ -33,13 +33,13 @@ import java.util.Map;
 public class USERPROFILE extends AppCompatActivity {
     ListView listView;
     Adaptertusershowprofile adapter;
-
-    String url = "https://stray-care.000webhostapp.com/userdatashowprofile.php";
     public static ArrayList<usershowprofiledata> usershowprofileList = new ArrayList<>();
+    String url = "https://stray-care.000webhostapp.com/userdatashowprofile.php";
+
 
     Button v1, v2;
     TextView t;
-    String emaill;
+    public static String id,name,emaill,mobile,address;
     String pass;
 
 
@@ -53,10 +53,10 @@ public class USERPROFILE extends AppCompatActivity {
         Intent i = getIntent();
         emaill = i.getStringExtra("email");
         pass = i.getStringExtra("pass");
-        v1 = findViewById(R.id.userprofiledonatebutton);
+        v2 = findViewById(R.id.userprofiledonatebutton);
 
 
-        v1.setOnClickListener(new View.OnClickListener() {
+        v2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), userdonate.class);
@@ -64,9 +64,9 @@ public class USERPROFILE extends AppCompatActivity {
 
             }
         });
-        v2 = findViewById(R.id.USERSENDINJUREDBUTTON);
+        v1 = findViewById(R.id.USERSENDINJUREDBUTTON);
 
-        v2.setOnClickListener(new View.OnClickListener() {
+        v1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), usersendinjuredpetdoc.class);
@@ -98,12 +98,12 @@ public class USERPROFILE extends AppCompatActivity {
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 
-
+                                    String id = object.getString("us_id");
                                     String name = object.getString("name");
                                     String email = object.getString("email");
-
-
-                                    usershowprofiledata e = new usershowprofiledata(name, email);
+                                    String mobile = object.getString("mobile");
+                                    String address = object.getString("address");
+                                    usershowprofiledata e = new usershowprofiledata(id,name, email,mobile,address);
                                     usershowprofileList.add(e);
                                     adapter.notifyDataSetChanged();
 
@@ -144,19 +144,25 @@ public class USERPROFILE extends AppCompatActivity {
 
 
     }
-
     class usershowprofiledata {
-        private String name, email, mobile;
+        public String id,name, email, mobile,address;
 
         public usershowprofiledata() {
         }
 
-        public usershowprofiledata(String name, String email) {
+        public usershowprofiledata(String id,String name, String email,String mobile,String address) {
+            this.id = id;
             this.name = name;
             this.email = email;
-
+            this.mobile = mobile;
+            this.address = address;
         }
-
+        public String getId() {
+            return id;
+        }
+        public void setId(String id) {
+            this.id = id;
+        }
         public String getName() {
             return name;
         }
@@ -172,12 +178,28 @@ public class USERPROFILE extends AppCompatActivity {
         public void setEmail(String email) {
             this.email = email;
         }
+        public String getMobile() {
+            return mobile;
+        }
 
+        public void setMobile(String mobile) {
+            this.mobile = mobile;
+
+        }
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address= address;
+
+
+        }
     }
 
     class Adaptertusershowprofile extends ArrayAdapter<usershowprofiledata> {
         Context context;
-        List<usershowprofiledata> arrayListprofiledata;
+        public List<usershowprofiledata> arrayListprofiledata;
 
         public Adaptertusershowprofile(@NonNull Context context, List<usershowprofiledata> arrayListprofiledata) {
             super(context, R.layout.custom_list_itemusershowprofile, usershowprofileList);
@@ -189,10 +211,22 @@ public class USERPROFILE extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_itemusershowprofile, null, true);
-            TextView tvId = view.findViewById(R.id.txt_name);
-            TextView tvname = view.findViewById(R.id.txt_mobile);
-            tvId.setText(arrayListprofiledata.get(position).getEmail());
+            TextView tvId = view.findViewById(R.id.txt_ID);
+            TextView tvname = view.findViewById(R.id.txt_name);
+            TextView tvemail = view.findViewById(R.id.txt_email);
+            TextView tvmobile = view.findViewById(R.id.txt_mobile);
+            TextView tvaddress = view.findViewById(R.id.txt_ADDRESS);
+            id=arrayListprofiledata.get(position).getId();
+            name=arrayListprofiledata.get(position).getName();
+        emaill=arrayListprofiledata.get(position).getEmail();
+            mobile=arrayListprofiledata.get(position).getMobile();
+            address=arrayListprofiledata.get(position).getAddress();
+
+            tvId.setText(arrayListprofiledata.get(position).getId());
             tvname.setText(arrayListprofiledata.get(position).getName());
+            tvemail.setText(arrayListprofiledata.get(position).getEmail());
+            tvmobile.setText(arrayListprofiledata.get(position).getMobile());
+            tvaddress.setText(arrayListprofiledata.get(position).getAddress());
             return view;
         }
     }
