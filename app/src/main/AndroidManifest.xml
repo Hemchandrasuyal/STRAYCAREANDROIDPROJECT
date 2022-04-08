@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STRAYCARE">
         <activity
+            android:name=".NGOSHOWDONATION"
+            android:exported="false" />
+        <activity
+            android:name=".NGOSHOWLISTOFABANDONED"
+            android:exported="false" />
+        <activity
             android:name=".usersendinjuredpetdoc"
             android:exported="false" />
         <activity

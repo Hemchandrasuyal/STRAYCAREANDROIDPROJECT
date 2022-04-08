@@ -38,7 +38,7 @@ public class USERPROFILE extends AppCompatActivity {
 
 
     Button v1, v2;
-    TextView t;
+
     public static String id,name,emaill,mobile,address;
     String pass;
 
