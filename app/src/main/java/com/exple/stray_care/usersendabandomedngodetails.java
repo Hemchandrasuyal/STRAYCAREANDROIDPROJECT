@@ -20,7 +20,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class usersendabandomedngo extends AppCompatActivity {
+public class usersendabandomedngodetails extends AppCompatActivity {
     TextView tvid, tvname, tvemail, tvmobile, tvaddress, tvUSERNAME, tvUSEREMAIL, tvcondition, tvlocation, tvanitype;
     String tvstringcondition, tvstringlocation, Tvstringanitype;
     int position;
@@ -28,7 +28,7 @@ public class usersendabandomedngo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usersendabandomedngo);
+        setContentView(R.layout.activity_usersendabandomedngodetails);
         tvid = findViewById(R.id.txtID);
         tvname = findViewById(R.id.txtname);
         tvemail = findViewById(R.id.txtemail);
@@ -79,14 +79,14 @@ public class usersendabandomedngo extends AppCompatActivity {
                     tvanitype.setText("");
                     tvlocation.setText("");
                     tvcondition.setText("");
-                    Toast.makeText(usersendabandomedngo.this, response, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(usersendabandomedngodetails.this, response, Toast.LENGTH_SHORT).show();
                 }
             }, new Response.ErrorListener() {
 
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     progressDialog.dismiss();
-                    Toast.makeText(usersendabandomedngo.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(usersendabandomedngodetails.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -104,7 +104,7 @@ public class usersendabandomedngo extends AppCompatActivity {
                 }
             };
 
-            RequestQueue requestQueue = Volley.newRequestQueue(usersendabandomedngo.this);
+            RequestQueue requestQueue = Volley.newRequestQueue(usersendabandomedngodetails.this);
             requestQueue.add(request);
 
 

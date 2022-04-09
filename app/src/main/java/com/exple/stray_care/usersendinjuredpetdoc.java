@@ -59,7 +59,7 @@ public class usersendinjuredpetdoc extends AppCompatActivity {
                         switch (i) {
                             case 0:
 
-                                startActivity(new Intent(getApplicationContext(), usersendabandomedngo.class)
+                                startActivity(new Intent(getApplicationContext(), usersendinjuredpettodoctordetails.class)
                                         .putExtra("position", position));
 
                                 break;
@@ -100,12 +100,13 @@ public class usersendinjuredpetdoc extends AppCompatActivity {
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 
-
+                                    String id = object.getString("id");
                                     String name = object.getString("name");
                                     String email = object.getString("email");
+                                    String mobile=object.getString("mobile");
+                              String address  = object.getString("address");
 
-
-                                    usersendinjuredpetdata e = new  usersendinjuredpetdata(name,email);
+                                    usersendinjuredpetdata e = new  usersendinjuredpetdata(id,name,email,mobile,address);
                                     usersendinjureddocdata.add(e);
                                     adapter.notifyDataSetChanged();
 
@@ -149,19 +150,26 @@ public class usersendinjuredpetdoc extends AppCompatActivity {
 }
 class usersendinjuredpetdata {
 
-    private String name, email;
+    private String id,name, email,mobile,address;
 
     public usersendinjuredpetdata() {
     }
 
-    public usersendinjuredpetdata(String name, String email) {
-
+    public usersendinjuredpetdata(String id,String name, String email,String mobile,String address) {
+         this.id=id;
         this.name = name;
         this.email = email;
-
+        this.mobile= mobile;
+        this.address = address;
 
     }
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -177,7 +185,20 @@ class usersendinjuredpetdata {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getMobile() {
+        return mobile;
+    }
 
+    public void setMobile(String mobile) {
+        this.mobile= mobile;
+    }
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address= address;
+    }
 
 }
 

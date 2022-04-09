@@ -7,7 +7,6 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
-import android.widget.*;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.AdapterView;
@@ -61,7 +60,7 @@ public class userdonate extends AppCompatActivity {
                                 break;
                             case 1:
 
-                                startActivity(new Intent(getApplicationContext(), usersendabandomedngo.class)
+                                startActivity(new Intent(getApplicationContext(), usersendabandomedngodetails.class)
                                         .putExtra("position", position));
 
                                 break;

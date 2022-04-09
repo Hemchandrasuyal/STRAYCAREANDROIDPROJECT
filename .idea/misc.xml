@@ -17,16 +17,18 @@
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_userprofile.xml" value="0.16" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersendabandomedngo.xml" value="0.25" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersendinjuredpetdoc.xml" value="0.1" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersendinjuredpettodoctordetails.xml" value="0.25" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersignup.xml" value="0.2" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemngodatadonate.xml" value="0.2" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemngoshowprofile.xml" value="0.13802083333333334" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemsendinjuredpet.xml" value="0.18" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemshodonationtongo.xml" value="0.11927083333333334" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemusershowprofile.xml" value="0.18" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_ngoshowabandonedpet.xml" value="0.11927083333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

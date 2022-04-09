@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STRAYCARE">
         <activity
+            android:name=".usersendinjuredpettodoctordetails"
+            android:exported="false" />
+        <activity
             android:name=".NGOSHOWDONATION"
             android:exported="false" />
         <activity
@@ -22,7 +25,7 @@
             android:name=".usersendinjuredpetdoc"
             android:exported="false" />
         <activity
-            android:name=".usersendabandomedngo"
+            android:name=".usersendabandomedngodetails"
             android:exported="false" />
         <activity
             android:name=".ngosignup"

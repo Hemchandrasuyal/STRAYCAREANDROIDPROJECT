@@ -6,11 +6,11 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".usersendabandomedngo">
+    tools:context=".usersendinjuredpettodoctordetails">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NGO ID:"
+        android:text="doctor ID:"
         android:textSize="20sp"
         android:id="@+id/txtID"
         android:layout_marginBottom="10dp"
@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NGO Name:"
+        android:text="doctor Name:"
         android:textSize="20sp"
         android:id="@+id/txtname"
         android:layout_marginBottom="10dp"
@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NGO Email:"
+        android:text="doctor Email:"
         android:textSize="20sp"
         android:id="@+id/txtemail"
         android:layout_marginBottom="10dp"
@@ -36,7 +36,7 @@
         android:id="@+id/txcontact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NGO Contact:"
+        android:text="doctor Contact:"
         android:textSize="20sp"
 
         android:layout_marginBottom="10dp"
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="NGO Address:"
+        android:text="doctor Address:"
         android:textSize="20sp" />
 
     <TextView
@@ -80,16 +80,16 @@
         android:text="LOCATION" />
 
     <EditText
-        android:id="@+id/textcondition"
+        android:id="@+id/textinjurytype"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:text="CONDITION" />
+        android:text="INJURY TYPE" />
 
     <Button
         android:id="@+id/button3DONATE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="insertabandonedanidata"
+        android:onClick="insertinjurepetdata"
         android:text="Button" />
 
 </LinearLayout>

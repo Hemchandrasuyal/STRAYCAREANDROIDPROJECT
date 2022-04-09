@@ -196,11 +196,11 @@ class ngoshowlistabandonedpetdata {
 
 class Adapterngoshowlistabandonedpet extends ArrayAdapter<ngoshowlistabandonedpetdata> {
     Context context;
-    List< ngoshowlistabandonedpetdata> arrayListusersendinjureddata;
-    public Adapterngoshowlistabandonedpet(@NonNull Context context, List< ngoshowlistabandonedpetdata> arrayListusersendinjureddata) {
-        super(context,R.layout.custom_list_itemsendinjuredpet,arrayListusersendinjureddata);
+    List< ngoshowlistabandonedpetdata> arrayListNGOSHOWLISTABANDONEDPET;
+    public Adapterngoshowlistabandonedpet(@NonNull Context context, List< ngoshowlistabandonedpetdata> arrayListNGOSHOWLISTABANDONEDPET) {
+        super(context,R.layout.custom_list_ngoshowabandonedpet, arrayListNGOSHOWLISTABANDONEDPET);
         this.context=context;
-        this.arrayListusersendinjureddata=arrayListusersendinjureddata;
+        this.arrayListNGOSHOWLISTABANDONEDPET=arrayListNGOSHOWLISTABANDONEDPET;
     }
 
     @NonNull
@@ -209,8 +209,8 @@ class Adapterngoshowlistabandonedpet extends ArrayAdapter<ngoshowlistabandonedpe
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_ngoshowabandonedpet,null,true);
         TextView tvId=view.findViewById(R.id.txt_name);
         TextView tvname=view.findViewById(R.id.txt_mobile);
-        tvId.setText(arrayListusersendinjureddata.get(position).getName());
-        tvname.setText(arrayListusersendinjureddata.get(position).getEmail());
+        tvId.setText(arrayListNGOSHOWLISTABANDONEDPET.get(position).getName());
+        tvname.setText(arrayListNGOSHOWLISTABANDONEDPET.get(position).getEmail());
         return view;
     }
 }
