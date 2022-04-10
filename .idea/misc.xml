@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_docprofile.xml" value="0.11927083333333334" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_docprofile.xml" value="0.22" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_doctor.xml" value="0.2" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_doctorshowinjuredpet.xml" value="0.11927083333333334" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_doctorsignup.xml" value="0.11927083333333334" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_main2.xml" value="0.2" />
@@ -19,10 +20,13 @@
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersendinjuredpetdoc.xml" value="0.1" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersendinjuredpettodoctordetails.xml" value="0.25" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/activity_usersignup.xml" value="0.2" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemdoctorshowinjuredpet.xml" value="0.11927083333333334" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemdoctorshowprofile.xml" value="0.11927083333333334" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemngodatadonate.xml" value="0.2" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemngoshowprofile.xml" value="0.13802083333333334" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemsendinjuredpet.xml" value="0.18" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemshodonationtongo.xml" value="0.11927083333333334" />
+        <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemshowdonationtongo.xml" value="0.11927083333333334" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_itemusershowprofile.xml" value="0.18" />
         <entry key="..\:/STRAYCARE/app/src/main/res/layout/custom_list_ngoshowabandonedpet.xml" value="0.11927083333333334" />
       </map>

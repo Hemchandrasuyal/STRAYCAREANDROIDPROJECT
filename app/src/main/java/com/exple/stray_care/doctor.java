@@ -75,7 +75,8 @@ public class doctor extends AppCompatActivity {
                     }
                     else{
                         Intent i=new Intent(getApplicationContext(), Docprofile.class);
-
+                        i.putExtra("email",doclogin_email);
+                        i.putExtra("pass",doclogin_password);
                         startActivity(i);
                         Toast.makeText(doctor.this, response, Toast.LENGTH_SHORT).show();
                     }

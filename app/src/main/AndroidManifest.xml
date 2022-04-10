@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STRAYCARE">
         <activity
+            android:name=".DOCTORSHOWINJUREDPET"
+            android:exported="false" />
+        <activity
             android:name=".usersendinjuredpettodoctordetails"
             android:exported="false" />
         <activity
