@@ -37,7 +37,7 @@ public class ngoprofile extends AppCompatActivity {
     String url = "https://stray-care.000webhostapp.com/ngoshowprofile.php";
 
 
-    Button v1, v2;
+    Button v1, v2,v3;
 
     public static String id,name,emaill,mobile,address;
     String pass;
@@ -70,6 +70,16 @@ public class ngoprofile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), NGOSHOWDONATION.class);
+                startActivity(i);
+
+            }
+        });
+        v3 = findViewById(R.id.buttonNGOSHOWLISTCREMATION);
+
+        v3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), NGOSHOWLISTCREMATION.class);
                 startActivity(i);
 
             }

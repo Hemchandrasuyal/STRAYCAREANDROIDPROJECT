@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STRAYCARE">
         <activity
+            android:name=".NGOSHOWLISTCREMATION"
+            android:exported="false" />
+        <activity
             android:name=".usersendforcremationngodetails"
             android:exported="false" />
         <activity
