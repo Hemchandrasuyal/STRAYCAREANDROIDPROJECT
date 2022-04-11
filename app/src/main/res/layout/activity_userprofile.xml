@@ -9,20 +9,21 @@
 
     <ListView
         android:id="@+id/myListSHOWPROFILE"
-        android:layout_width="380dp"
-        android:layout_height="282dp"
-        android:layout_marginTop="132dp"
+        android:layout_width="362dp"
+        android:layout_height="340dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.283" />
 
     <Button
         android:id="@+id/userprofiledonatebutton"
-        android:layout_width="269dp"
-        android:layout_height="104dp"
+        android:layout_width="341dp"
+        android:layout_height="117dp"
         android:backgroundTint="#1E38C5"
-        android:text="DONATE OR SEND ABANDONED PET"
+        android:text="DONATE OR SEND ABANDONED PET OR REPORT FOR CREMATION TO NGO"
         android:textColor="#E8DCDC"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -38,7 +39,7 @@
         android:layout_width="245dp"
         android:layout_height="46dp"
         android:backgroundTint="#1E38C5"
-        android:text="SEND INJURED "
+        android:text="SEND INJURED TO DOCTOR"
         android:textColor="#E8DCDC"
         android:textSize="16sp"
         android:textStyle="bold"
