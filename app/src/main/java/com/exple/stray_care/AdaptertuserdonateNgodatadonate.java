@@ -24,8 +24,10 @@ public class AdaptertuserdonateNgodatadonate extends ArrayAdapter<userdonateNgod
        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_itemngodatadonate,null,true);
        TextView tvId=view.findViewById(R.id.txt_id);
         TextView tvname=view.findViewById(R.id.txt_name);
-        tvId.setText(arrayListngodata.get(position).getEmail());
+        TextView tvmobile=view.findViewById(R.id.txt_mobile);
+        tvId.setText(arrayListngodata.get(position).getId());
         tvname.setText(arrayListngodata.get(position).getName());
+        tvmobile.setText(arrayListngodata.get(position).getMobile());
         return view;
     }
 }

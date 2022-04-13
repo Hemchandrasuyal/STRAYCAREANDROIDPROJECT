@@ -32,12 +32,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.974" />
+        app:layout_constraintVertical_bias="0.954" />
 
     <Button
         android:id="@+id/USERSENDINJUREDBUTTON"
-        android:layout_width="245dp"
-        android:layout_height="46dp"
+        android:layout_width="241dp"
+        android:layout_height="76dp"
         android:backgroundTint="#1E38C5"
         android:text="SEND INJURED TO DOCTOR"
         android:textColor="#E8DCDC"
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767" />
+        app:layout_constraintVertical_bias="0.726" />
 
     <TextView
         android:id="@+id/textView3"

@@ -2,6 +2,7 @@ package com.exple.stray_care;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -46,6 +47,9 @@ public class NGOSHOWLISTOFABANDONED extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ngoshowlistofabandoned);
         listView = findViewById(R.id.myListViewshowabandonedpetngo);
+
+        ActionBar t=getSupportActionBar();
+        t.setTitle("ABANDONED ANIMAL DETAILS");
         adapter = new Adapterngoshowlistabandonedpet(this,ngoshowlistabandonedpet );
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

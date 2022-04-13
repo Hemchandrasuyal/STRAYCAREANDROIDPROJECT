@@ -2,6 +2,7 @@ package com.exple.stray_care;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,6 +43,8 @@ public class usersendinjuredpetdoc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usersendinjuredpetdoc);
         listView = findViewById(R.id.myListViewusersinjured);
+        ActionBar t=getSupportActionBar();
+        t.setTitle("DOCTOR'S NEAR YOU");
         adapter = new Adaptertusersendinjured(this,usersendinjureddocdata);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -215,10 +218,12 @@ class Adaptertusersendinjured extends ArrayAdapter<usersendinjuredpetdata> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_itemsendinjuredpet,null,true);
-        TextView tvId=view.findViewById(R.id.txt_name);
-        TextView tvname=view.findViewById(R.id.txt_mobile);
-        tvId.setText(arrayListusersendinjureddata.get(position).getName());
-        tvname.setText(arrayListusersendinjureddata.get(position).getEmail());
+        TextView tvId=view.findViewById(R.id.txt_id);
+        TextView tvname=view.findViewById(R.id.txt_name);
+        TextView tvmobile=view.findViewById(R.id.txt_mobile);
+        tvId.setText(arrayListusersendinjureddata.get(position).getId());
+        tvname.setText(arrayListusersendinjureddata.get(position).getName());
+        tvmobile.setText(arrayListusersendinjureddata.get(position).getMobile());
         return view;
     }
 }

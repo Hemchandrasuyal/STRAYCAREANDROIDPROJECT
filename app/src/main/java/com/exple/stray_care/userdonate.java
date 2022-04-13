@@ -1,5 +1,6 @@
 package com.exple.stray_care;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,6 +36,8 @@ public class userdonate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userdonate);
         listView = findViewById(R.id.myListView);
+        ActionBar t=getSupportActionBar();
+        t.setTitle("NGO NEAR YOU");
         adapter = new AdaptertuserdonateNgodatadonate(this, userdonateNgodata);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

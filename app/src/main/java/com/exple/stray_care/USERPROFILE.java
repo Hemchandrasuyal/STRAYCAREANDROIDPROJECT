@@ -2,6 +2,7 @@ package com.exple.stray_care;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +49,8 @@ public class USERPROFILE extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userprofile);
         listView = findViewById(R.id.myListSHOWPROFILE);
+        ActionBar t=getSupportActionBar();
+        t.setTitle("USER PROFILE");
         adapter = new Adaptertusershowprofile(this,usershowprofileList);
         listView.setAdapter(adapter);
         Intent i = getIntent();
@@ -222,11 +225,11 @@ public class USERPROFILE extends AppCompatActivity {
             mobile=arrayListprofiledata.get(position).getMobile();
             address=arrayListprofiledata.get(position).getAddress();
 
-            tvId.setText(arrayListprofiledata.get(position).getId());
-            tvname.setText(arrayListprofiledata.get(position).getName());
-            tvemail.setText(arrayListprofiledata.get(position).getEmail());
-            tvmobile.setText(arrayListprofiledata.get(position).getMobile());
-            tvaddress.setText(arrayListprofiledata.get(position).getAddress());
+            tvId.setText("USER ID:  "+arrayListprofiledata.get(position).getId());
+            tvname.setText("USER NAME:  "+arrayListprofiledata.get(position).getName());
+            tvemail.setText("USER EMAIL:  "+arrayListprofiledata.get(position).getEmail());
+            tvmobile.setText("USER MOBILE:  "+arrayListprofiledata.get(position).getMobile());
+            tvaddress.setText("USER ADDRESS:  "+arrayListprofiledata.get(position).getAddress());
             return view;
         }
     }

@@ -2,6 +2,7 @@ package com.exple.stray_care;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +49,8 @@ public class ngoprofile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ngoprofile);
         listView = findViewById(R.id.myListNGOSHOWPROFILE);
+        ActionBar t=getSupportActionBar();
+        t.setTitle("NGO PROFILE");
          adapter = new  Adaptertshorofilengo(this,ngoshowprofileList);
         listView.setAdapter(adapter);
         Intent i = getIntent();

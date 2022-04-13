@@ -2,6 +2,7 @@ package com.exple.stray_care;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -45,6 +46,9 @@ public class NGOSHOWLISTCREMATION extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ngoshowlistcremation);
         listView = findViewById(R.id.myListViewshowcremation);
+
+        ActionBar t=getSupportActionBar();
+        t.setTitle("CREMATION DETAILS");
         adapter = new Adapterngoshowlistcremation(this,ngoshowlistcremation );
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

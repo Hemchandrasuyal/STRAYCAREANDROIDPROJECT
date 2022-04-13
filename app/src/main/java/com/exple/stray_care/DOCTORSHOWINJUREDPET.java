@@ -2,6 +2,7 @@ package com.exple.stray_care;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -46,6 +47,9 @@ public class DOCTORSHOWINJUREDPET extends AppCompatActivity {
         setContentView(R.layout.activity_doctorshowinjuredpet);
         listView = findViewById(R.id.myListViewdoctorshowinjuredpet);
         adapter = new Adapterdoctorshowinjuredpet(this,doctorshowlistinjuredpet  );
+
+        ActionBar t=getSupportActionBar();
+        t.setTitle("LIST OF INJURED ANIMAL");
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
