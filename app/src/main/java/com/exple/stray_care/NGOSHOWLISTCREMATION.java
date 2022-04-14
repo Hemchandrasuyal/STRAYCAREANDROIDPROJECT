@@ -48,7 +48,7 @@ public class NGOSHOWLISTCREMATION extends AppCompatActivity {
         listView = findViewById(R.id.myListViewshowcremation);
 
         ActionBar t=getSupportActionBar();
-        t.setTitle("CREMATION DETAILS");
+        t.setTitle("CREMATION LIST");
         adapter = new Adapterngoshowlistcremation(this,ngoshowlistcremation );
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -58,8 +58,8 @@ public class NGOSHOWLISTCREMATION extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
-                CharSequence[] dialogItem = {"SEND INJURED"};
-                builder.setTitle("DONATION");
+                CharSequence[] dialogItem = {"SEND ACKNOWLEDGEMENT MAIL"};
+                builder.setTitle("MORE");
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {

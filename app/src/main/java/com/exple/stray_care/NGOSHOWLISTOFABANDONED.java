@@ -49,7 +49,7 @@ public class NGOSHOWLISTOFABANDONED extends AppCompatActivity {
         listView = findViewById(R.id.myListViewshowabandonedpetngo);
 
         ActionBar t=getSupportActionBar();
-        t.setTitle("ABANDONED ANIMAL DETAILS");
+        t.setTitle("ABANDONED ANIMAL LIST");
         adapter = new Adapterngoshowlistabandonedpet(this,ngoshowlistabandonedpet );
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -59,8 +59,8 @@ public class NGOSHOWLISTOFABANDONED extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
-                CharSequence[] dialogItem = {"SEND INJURED"};
-                builder.setTitle("DONATION");
+                CharSequence[] dialogItem = {"SEND ACKNOWLEDGEMENT MAIL"};
+                builder.setTitle("MORE");
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {

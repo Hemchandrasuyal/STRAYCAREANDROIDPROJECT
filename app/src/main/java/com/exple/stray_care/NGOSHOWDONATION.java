@@ -47,7 +47,7 @@ public class NGOSHOWDONATION extends AppCompatActivity {
         setContentView(R.layout.activity_ngoshowdonation);
         listView = findViewById(R.id.myListViewshowdonation);
         ActionBar t=getSupportActionBar();
-        t.setTitle("DONATIONS DETAILS");
+        t.setTitle("DONATIONS LIST");
         adapter = new Adapterngoshowlistdonation(this,ngoshowlistdonation );
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -57,8 +57,8 @@ public class NGOSHOWDONATION extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
-                CharSequence[] dialogItem = {"SEND INJURED"};
-                builder.setTitle("DONATION");
+                CharSequence[] dialogItem = {"SEND ACKNOWLEDGEMENT MAIL"};
+                builder.setTitle("MORE");
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {

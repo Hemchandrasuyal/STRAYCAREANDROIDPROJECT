@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,14 +60,19 @@ public class DOCTORSHOWINJUREDPET extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
-                CharSequence[] dialogItem = {"SEND INJURED"};
-                builder.setTitle("DONATION");
+                CharSequence[] dialogItem = {"SEND ACKNOWLEDGEMENT MAIL"};
+                builder.setTitle("MORE");
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         switch (i) {
                             case 0:
 
+                                 Intent emailintent=new Intent(Intent.ACTION_SEND);
+                                 emailintent.setData(Uri.parse("mailto:"));
+                                 emailintent.setType("text/plain");
+                                 emailintent.putExtra(Intent.EXTRA_EMAIL,doctorshowlistinjuredpet.get(position).getEmail());
+                                 startActivity(Intent.createChooser(emailintent,"SEND EMAIL"));
 
                                 break;
 
@@ -106,11 +113,12 @@ public class DOCTORSHOWINJUREDPET extends AppCompatActivity {
                                     JSONObject object = jsonArray.getJSONObject(i);
 
 
-                                    String name = object.getString("animaltype");
-                                    String email = object.getString("location");
-
-
-                                    doctorshowinjuredpetdata e = new  doctorshowinjuredpetdata(name,email);
+                                    String animaltype = object.getString("animaltype");
+                                    String location = object.getString("location");
+                                    String name = object.getString("name");
+                                    String email = object.getString("email");
+                                    String mobile = object.getString("mobile");
+                                    doctorshowinjuredpetdata e = new  doctorshowinjuredpetdata(animaltype,location,name,email,mobile);
                                     doctorshowlistinjuredpet .add(e);
                                     adapter.notifyDataSetChanged();
 
@@ -164,20 +172,36 @@ public class DOCTORSHOWINJUREDPET extends AppCompatActivity {
 
 }
 class doctorshowinjuredpetdata {
+    private String animaltype, location;
 
-    private String name, email;
+    private String name, email,mobile;
 
     public doctorshowinjuredpetdata() {
     }
 
-    public doctorshowinjuredpetdata(String name, String email) {
-
+    public doctorshowinjuredpetdata(String animaltype, String location,String name, String email,String mobile) {
+        this.animaltype=animaltype;
+        this.location=location;
         this.name = name;
         this.email = email;
-
+        this.mobile=mobile;
 
     }
+    public String getAnimaltype() {
+        return animaltype;
+    }
 
+    public void setAnimaltype(String animaltype) {
+        this.animaltype = animaltype;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
     public String getName() {
         return name;
     }
@@ -193,7 +217,13 @@ class doctorshowinjuredpetdata {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getMobile() {
+        return mobile;
+    }
 
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
 }
 
@@ -210,10 +240,14 @@ class Adapterdoctorshowinjuredpet extends ArrayAdapter<doctorshowinjuredpetdata>
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_itemdoctorshowinjuredpet,null,true);
-        TextView tvId=view.findViewById(R.id.txt_name);
-        TextView tvname=view.findViewById(R.id.txt_mobile);
-        tvId.setText(arrayListdoctorshowinjuredpet.get(position).getName());
-        tvname.setText(arrayListdoctorshowinjuredpet.get(position).getEmail());
+        TextView tvname=view.findViewById(R.id.txt_name);
+        TextView tvmobile=view.findViewById(R.id.txt_mobile);
+        TextView tvanitype=view.findViewById(R.id.txt_animaltype);
+        TextView tvloc=view.findViewById(R.id.txt_location);
+        tvname.setText("USER'S NAME :"+arrayListdoctorshowinjuredpet.get(position).getName());
+        tvmobile.setText("USER'S MOBILE: "+arrayListdoctorshowinjuredpet.get(position).getMobile());
+        tvanitype.setText("ANIMAL TYPE: "+arrayListdoctorshowinjuredpet.get(position).getAnimaltype());
+        tvloc.setText("LOCATION: "+arrayListdoctorshowinjuredpet.get(position).getLocation());
         return view;
     }
 }
