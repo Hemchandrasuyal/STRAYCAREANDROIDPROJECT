@@ -1,5 +1,6 @@
 package com.exple.stray_care;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -29,6 +30,8 @@ public class usersendabandomedngodetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usersendabandomedngodetails);
+        ActionBar t=getSupportActionBar();
+        t.setTitle("FILL DETAILS OF ABANDONED ANIMAL");
         tvid = findViewById(R.id.txtID);
         tvname = findViewById(R.id.txtname);
         tvemail = findViewById(R.id.txtemail);
@@ -40,13 +43,13 @@ public class usersendabandomedngodetails extends AppCompatActivity {
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
-        tvid.setText("ID: " + userdonate.userdonateNgodata.get(position).getId());
-        tvname.setText("NAME: " + userdonate.userdonateNgodata.get(position).getName());
-        tvemail.setText("EMAIL: " + userdonate.userdonateNgodata.get(position).getEmail());
-        tvmobile.setText("MOBILE: " + userdonate.userdonateNgodata.get(position).getMobile());
-        tvaddress.setText("ADDRESS: " + userdonate.userdonateNgodata.get(position).getAddress());
-        tvUSERNAME.setText("USER ID: " + USERPROFILE.id);
-        tvUSEREMAIL.setText("USER NAME " + USERPROFILE.name);
+        tvid.setText("NGO ID: " + userdonate.userdonateNgodata.get(position).getId());
+        tvname.setText("NGO NAME: " + userdonate.userdonateNgodata.get(position).getName());
+        tvemail.setText("NGO EMAIL: " + userdonate.userdonateNgodata.get(position).getEmail());
+        tvmobile.setText("NGO MOBILE: " + userdonate.userdonateNgodata.get(position).getMobile());
+        tvaddress.setText("NGO ADDRESS: " + userdonate.userdonateNgodata.get(position).getAddress());
+        tvUSERNAME.setText("USER NAME: " + USERPROFILE.name);
+        tvUSEREMAIL.setText("USER EMAIL " + USERPROFILE.emaill);
     }
 
     public void insertabandonedanidata(View view) {

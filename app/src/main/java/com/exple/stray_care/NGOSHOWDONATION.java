@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +66,11 @@ public class NGOSHOWDONATION extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int i) {
                         switch (i) {
                             case 0:
+                                Intent emailintent=new Intent(Intent.ACTION_SEND);
+                                emailintent.setData(Uri.parse("mailto:"));
+                                emailintent.setType("text/plain");
 
+                                startActivity(Intent.createChooser(emailintent,"SEND EMAIL"));
 
                                 break;
 
@@ -103,13 +109,15 @@ public class NGOSHOWDONATION extends AppCompatActivity {
                                 for(int i=0;i<jsonArray.length();i++){
 
                                     JSONObject object = jsonArray.getJSONObject(i);
+                                    String amount = object.getString("amount");
+                                    String location = object.getString("location");
+                                    String name = object.getString("name");
+                                    String email = object.getString("email");
+                                    String mobile = object.getString("mobile");
 
 
-                                    String name = object.getString("amount");
-                                    String email = object.getString("pickuplocation");
 
-
-                                    ngoshowlistdonationdata e = new ngoshowlistdonationdata(name,email);
+                                    ngoshowlistdonationdata e = new ngoshowlistdonationdata(amount,location,name,email,mobile);
                                     ngoshowlistdonation.add(e);
                                     adapter.notifyDataSetChanged();
 
@@ -164,19 +172,37 @@ public class NGOSHOWDONATION extends AppCompatActivity {
 }
 class ngoshowlistdonationdata {
 
-    private String name, email;
+    private String amount, location;
 
+    private String name, email,mobile;
     public ngoshowlistdonationdata() {
     }
 
-    public ngoshowlistdonationdata(String name, String email) {
+    public ngoshowlistdonationdata(String amount, String location,String name, String email,String mobile) {
 
+        this.amount=amount;
+        this.location=location;
         this.name = name;
         this.email = email;
+        this.mobile=mobile;
 
 
     }
+    public String getAmount() {
+        return amount;
+    }
 
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
     public String getName() {
         return name;
     }
@@ -191,6 +217,13 @@ class ngoshowlistdonationdata {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
 
@@ -209,10 +242,17 @@ class Adapterngoshowlistdonation extends ArrayAdapter<ngoshowlistdonationdata> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_itemshowdonationtongo,null,true);
-        TextView tvId=view.findViewById(R.id.txt_name);
-        TextView tvname=view.findViewById(R.id.txt_mobile);
-        tvId.setText(arrayListNGOSHOWDONATION.get(position).getName());
-        tvname.setText(arrayListNGOSHOWDONATION.get(position).getEmail());
+        TextView tvname=view.findViewById(R.id.txt_name);
+        TextView tvmobile=view.findViewById(R.id.txt_mobile);
+        TextView tvemail=view.findViewById(R.id.txt_email);
+        TextView tvamount=view.findViewById(R.id.txt_animaltype);
+        TextView tvloc=view.findViewById(R.id.txt_location);
+        tvname.setText("USER'S NAME :"+arrayListNGOSHOWDONATION.get(position).getName());
+        tvmobile.setText("USER'S MOBILE: "+arrayListNGOSHOWDONATION.get(position).getMobile());
+        tvemail.setText("USER'S EMAIL: "+arrayListNGOSHOWDONATION.get(position).getEmail());
+        tvamount.setText("AMOUNT: "+arrayListNGOSHOWDONATION.get(position).getAmount());
+        tvloc.setText("LOCATION: "+arrayListNGOSHOWDONATION.get(position).getLocation());
+
         return view;
     }
 }

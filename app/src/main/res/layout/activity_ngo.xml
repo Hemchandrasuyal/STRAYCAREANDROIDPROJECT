@@ -39,14 +39,14 @@
 
     <EditText
         android:id="@+id/ngologinid"
-        android:layout_width="162dp"
+        android:layout_width="250dp"
         android:layout_height="51dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        app:layout_constraintVertical_bias="0.323" />
 
     <EditText
         android:id="@+id/ngologinpass"

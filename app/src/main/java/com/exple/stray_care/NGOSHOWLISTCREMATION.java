@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +67,11 @@ public class NGOSHOWLISTCREMATION extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int i) {
                         switch (i) {
                             case 0:
+                                Intent emailintent=new Intent(Intent.ACTION_SEND);
+                                emailintent.setData(Uri.parse("mailto:"));
+                                emailintent.setType("text/plain");
 
+                                startActivity(Intent.createChooser(emailintent,"SEND EMAIL"));
 
                                 break;
 
@@ -106,11 +112,14 @@ public class NGOSHOWLISTCREMATION extends AppCompatActivity {
                                     JSONObject object = jsonArray.getJSONObject(i);
 
 
-                                    String name = object.getString("animaltype");
-                                    String email = object.getString("location");
+                                    String name = object.getString("name");
+                                    String email= object.getString("email");
+                                    String mobile= object.getString("mobile");
+                                    String animaltype = object.getString("animaltype");
+                                    String location= object.getString("location");
 
 
-                                    ngoshowlistcremationdata e= new ngoshowlistcremationdata(name,email);
+                                    ngoshowlistcremationdata e= new ngoshowlistcremationdata(name,email,mobile,animaltype,location);
                                     ngoshowlistcremation.add(e);
                                     adapter.notifyDataSetChanged();
 
@@ -165,15 +174,17 @@ public class NGOSHOWLISTCREMATION extends AppCompatActivity {
 }
 class ngoshowlistcremationdata {
 
-    private String name, email;
+    private String name, email,mobile,animaltype,location;
 
     public ngoshowlistcremationdata(){
     }
 
-    public ngoshowlistcremationdata(String name, String email) {
-
+    public ngoshowlistcremationdata(String name, String email,String mobile,String animaltype,String location) {
+        this.animaltype=animaltype;
+        this.location=location;
         this.name = name;
         this.email = email;
+        this.mobile=mobile;
 
 
     }
@@ -193,8 +204,28 @@ class ngoshowlistcremationdata {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getMobile() {
+        return mobile;
+    }
 
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+    public String getAnimaltype() {
+        return animaltype;
+    }
 
+    public void setAnimaltype(String animaltype) {
+        this.animaltype = animaltype;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }
 
 class Adapterngoshowlistcremation extends ArrayAdapter<ngoshowlistcremationdata> {
@@ -210,10 +241,16 @@ class Adapterngoshowlistcremation extends ArrayAdapter<ngoshowlistcremationdata>
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_itemshowcremationngo,null,true);
-        TextView tvId=view.findViewById(R.id.txt_name);
-        TextView tvname=view.findViewById(R.id.txt_mobile);
-        tvId.setText(arrayListNGOSHOWCREMATION.get(position).getName());
-        tvname.setText(arrayListNGOSHOWCREMATION.get(position).getEmail());
+        TextView tvname=view.findViewById(R.id.txt_name);
+        TextView tvmobile=view.findViewById(R.id.txt_mobile);
+        TextView tvemail=view.findViewById(R.id.txt_email);
+        TextView tvanitype=view.findViewById(R.id.txt_animaltype);
+        TextView tvloc=view.findViewById(R.id.txt_location);
+        tvname.setText("USER'S NAME :"+ arrayListNGOSHOWCREMATION.get(position).getName());
+        tvmobile.setText("USER'S MOBILE: "+arrayListNGOSHOWCREMATION.get(position).getMobile());
+        tvemail.setText("USER'S EMAIL"+arrayListNGOSHOWCREMATION.get(position).getEmail());
+        tvanitype.setText("ANIMAL TYPE: "+arrayListNGOSHOWCREMATION.get(position).getAnimaltype());
+        tvloc.setText("LOCATION: "+arrayListNGOSHOWCREMATION.get(position).getLocation());
         return view;
     }
 }

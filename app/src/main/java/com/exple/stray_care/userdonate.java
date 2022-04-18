@@ -48,7 +48,7 @@ public class userdonate extends AppCompatActivity {
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
                 CharSequence[] dialogItem = {"DONATE","SEND ANANDOMED","REPORT FOR CREMATION"};
-                builder.setTitle("DONATION");
+                builder.setTitle("......");
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {

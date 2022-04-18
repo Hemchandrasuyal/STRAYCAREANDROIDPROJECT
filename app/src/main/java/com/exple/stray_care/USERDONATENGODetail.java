@@ -1,5 +1,6 @@
 package com.exple.stray_care;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -28,6 +29,8 @@ int position;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userdonatengodetail);
+        ActionBar t=getSupportActionBar();
+        t.setTitle("FILL DETAILS OF DONATION");
         TVID=findViewById(R.id.txtid);
     tvname=findViewById(R.id.txtname);
     tvemail=findViewById(R.id.txtemail);
@@ -39,8 +42,8 @@ int position;
         TVID.setText("NGO ID"+userdonate.userdonateNgodata.get(position).getId());
         tvname.setText("NGO NAME: "+userdonate.userdonateNgodata.get(position).getName());
         tvemail.setText("NGO EMAIL: "+userdonate.userdonateNgodata.get(position).getEmail());
-        tvmobile.setText("NGO mobile: "+userdonate.userdonateNgodata.get(position).getName());
-        tvemail.setText("NGO EMAIL: "+userdonate.userdonateNgodata.get(position).getEmail());
+        tvmobile.setText("NGO MOBILE: "+userdonate.userdonateNgodata.get(position).getMobile());
+        tvaddress.setText("NGO ADDRESS: "+userdonate.userdonateNgodata.get(position).getAddress());
     }
     public void inseruserdonate(View view) {
 

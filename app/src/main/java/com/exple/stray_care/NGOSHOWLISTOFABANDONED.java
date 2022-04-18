@@ -10,6 +10,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +67,11 @@ public class NGOSHOWLISTOFABANDONED extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int i) {
                         switch (i) {
                             case 0:
+                                Intent emailintent=new Intent(Intent.ACTION_SEND);
+                                emailintent.setData(Uri.parse("mailto:"));
+                                emailintent.setType("text/plain");
 
+                                startActivity(Intent.createChooser(emailintent,"SEND EMAIL"));
 
                                 break;
 
@@ -106,12 +111,13 @@ public class NGOSHOWLISTOFABANDONED extends AppCompatActivity {
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 
+                                    String animaltype = object.getString("animaltype");
+                                    String location = object.getString("location");
+                                    String name = object.getString("name");
+                                    String email = object.getString("email");
+                                    String mobile = object.getString("mobile");
 
-                                    String name = object.getString("animal_type");
-                                    String email = object.getString("location");
-
-
-                                    ngoshowlistabandonedpetdata e = new ngoshowlistabandonedpetdata(name,email);
+                                    ngoshowlistabandonedpetdata e = new ngoshowlistabandonedpetdata(animaltype,location,name,email,mobile);
                                     ngoshowlistabandonedpet.add(e);
                                     adapter.notifyDataSetChanged();
 
@@ -166,19 +172,39 @@ public class NGOSHOWLISTOFABANDONED extends AppCompatActivity {
 }
 class ngoshowlistabandonedpetdata {
 
-    private String name, email;
+    private String animaltype, location;
+
+    private String name, email,mobile;
 
     public ngoshowlistabandonedpetdata() {
     }
 
-    public ngoshowlistabandonedpetdata(String name, String email) {
+    public ngoshowlistabandonedpetdata(String animaltype, String location,String name, String email,String mobile) {
 
+        this.animaltype=animaltype;
+        this.location=location;
         this.name = name;
         this.email = email;
+        this.mobile=mobile;
 
 
     }
 
+    public String getAnimaltype() {
+        return animaltype;
+    }
+
+    public void setAnimaltype(String animaltype) {
+        this.animaltype = animaltype;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
     public String getName() {
         return name;
     }
@@ -193,6 +219,13 @@ class ngoshowlistabandonedpetdata {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
 
@@ -211,10 +244,16 @@ class Adapterngoshowlistabandonedpet extends ArrayAdapter<ngoshowlistabandonedpe
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_ngoshowabandonedpet,null,true);
-        TextView tvId=view.findViewById(R.id.txt_name);
-        TextView tvname=view.findViewById(R.id.txt_mobile);
-        tvId.setText(arrayListNGOSHOWLISTABANDONEDPET.get(position).getName());
-        tvname.setText(arrayListNGOSHOWLISTABANDONEDPET.get(position).getEmail());
+        TextView tvname=view.findViewById(R.id.txt_name);
+        TextView tvmobile=view.findViewById(R.id.txt_mobile);
+        TextView tvemail=view.findViewById(R.id.txt_email);
+        TextView tvanitype=view.findViewById(R.id.txt_animaltype);
+        TextView tvloc=view.findViewById(R.id.txt_location);
+        tvname.setText("USER'S NAME :"+ arrayListNGOSHOWLISTABANDONEDPET.get(position).getName());
+        tvmobile.setText("USER'S MOBILE: "+arrayListNGOSHOWLISTABANDONEDPET.get(position).getMobile());
+        tvemail.setText("USER'S EMAIL: "+arrayListNGOSHOWLISTABANDONEDPET.get(position).getEmail());
+        tvanitype.setText("ANIMAL TYPE: "+arrayListNGOSHOWLISTABANDONEDPET.get(position).getAnimaltype());
+        tvloc.setText("LOCATION: "+arrayListNGOSHOWLISTABANDONEDPET.get(position).getLocation());
         return view;
     }
 }

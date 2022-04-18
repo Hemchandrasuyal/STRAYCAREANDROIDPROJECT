@@ -1,5 +1,6 @@
 package com.exple.stray_care;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -28,6 +29,8 @@ public class usersendinjuredpettodoctordetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActionBar t=getSupportActionBar();
+        t.setTitle("FILL DETAILS OF INJURED ANIMAL");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usersendinjuredpettodoctordetails);
         tvid = findViewById(R.id.txtID);
@@ -41,14 +44,14 @@ public class usersendinjuredpettodoctordetails extends AppCompatActivity {
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
-        tvid.setText("ID: "+usersendinjuredpetdoc.usersendinjureddocdata.get(position).getId());
-        tvname.setText("NAME: " + usersendinjuredpetdoc.usersendinjureddocdata.get(position).getName());
-        tvemail.setText("EMAIL: " + usersendinjuredpetdoc.usersendinjureddocdata.get(position).getEmail());
-        tvmobile.setText("MOBILE: " + usersendinjuredpetdoc.usersendinjureddocdata.get(position).getMobile());
-        tvaddress.setText("ADDRESS: " + usersendinjuredpetdoc.usersendinjureddocdata.get(position).getAddress());
+        tvid.setText("DOCTOR ID: "+usersendinjuredpetdoc.usersendinjureddocdata.get(position).getId());
+        tvname.setText("DOCTOR NAME: " + usersendinjuredpetdoc.usersendinjureddocdata.get(position).getName());
+        tvemail.setText("DOCTOR EMAIL: " + usersendinjuredpetdoc.usersendinjureddocdata.get(position).getEmail());
+        tvmobile.setText("DOCTOR MOBILE: " + usersendinjuredpetdoc.usersendinjureddocdata.get(position).getMobile());
+        tvaddress.setText("DOCTOR ADDRESS: " + usersendinjuredpetdoc.usersendinjureddocdata.get(position).getAddress());
 
-        tvUSERNAME.setText("USER ID: " + USERPROFILE.id);
-        tvUSEREMAIL.setText("USER NAME " + USERPROFILE.name);
+        tvUSERNAME.setText("USER NAME: " + USERPROFILE.name);
+        tvUSEREMAIL.setText("USER EMAIL ID " + USERPROFILE.emaill);
     }
    public void insertinjurepetdata(View view){
         tvanitype = findViewById(R.id.txtanitype);

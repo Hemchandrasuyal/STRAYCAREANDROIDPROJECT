@@ -55,7 +55,7 @@ public class usersendinjuredpetdoc extends AppCompatActivity {
                 ProgressDialog progressDialog = new ProgressDialog(view.getContext());
 
                 CharSequence[] dialogItem = {"SEND INJURED"};
-                builder.setTitle("DONATION");
+                builder.setTitle(".......");
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {

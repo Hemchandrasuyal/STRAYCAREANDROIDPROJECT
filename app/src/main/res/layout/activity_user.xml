@@ -29,8 +29,8 @@
         android:layout_height="match_parent"
 
 
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/usid3"
@@ -50,14 +50,14 @@
 
     <EditText
         android:id="@+id/usidlogin"
-        android:layout_width="162dp"
-        android:layout_height="51dp"
+        android:layout_width="250dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        app:layout_constraintVertical_bias="0.336" />
 
     <EditText
         android:id="@+id/uspasslogin"

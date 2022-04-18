@@ -242,10 +242,12 @@ class Adapterdoctorshowinjuredpet extends ArrayAdapter<doctorshowinjuredpetdata>
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_itemdoctorshowinjuredpet,null,true);
         TextView tvname=view.findViewById(R.id.txt_name);
         TextView tvmobile=view.findViewById(R.id.txt_mobile);
+        TextView tvemail=view.findViewById(R.id.txt_email);
         TextView tvanitype=view.findViewById(R.id.txt_animaltype);
         TextView tvloc=view.findViewById(R.id.txt_location);
         tvname.setText("USER'S NAME :"+arrayListdoctorshowinjuredpet.get(position).getName());
         tvmobile.setText("USER'S MOBILE: "+arrayListdoctorshowinjuredpet.get(position).getMobile());
+        tvemail.setText("USER'S EMAIL: "+arrayListdoctorshowinjuredpet.get(position).getEmail());
         tvanitype.setText("ANIMAL TYPE: "+arrayListdoctorshowinjuredpet.get(position).getAnimaltype());
         tvloc.setText("LOCATION: "+arrayListdoctorshowinjuredpet.get(position).getLocation());
         return view;
